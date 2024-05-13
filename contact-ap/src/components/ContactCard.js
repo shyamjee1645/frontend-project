@@ -3,7 +3,7 @@ import React from "react";
 const ContactCard = (props) => {
     const user = "https://res-console.cloudinary.com/dnoeqauv6/media_explorer_thumbnails/813410220437db86edcd113fdadf1779/detailed";
 
-    const {name,email} = props.contact;
+    const {id,name,email} = props.contact;
     console.log(props);
     return (
     <div className="item">
@@ -16,7 +16,9 @@ const ContactCard = (props) => {
             {email}
             </div>
         </div>
-        <i className="trash alternate outline icon" style={{color: "red", marginTop: "7px"}}></i>
+        <i className="trash alternate outline icon" 
+        onClick={() => props.ClickHandler(id)}
+        style={{color: "red", marginTop: "7px"}}></i>
     </div>
     )
 }
